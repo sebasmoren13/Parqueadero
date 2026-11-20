@@ -22,4 +22,14 @@ public class Registro {
     private LocalDateTime entrada;
     private LocalDateTime salida;
     private boolean activo;
+
+    @Column(length = 20)
+    private String placa;
+
+    private String descripcion;
+
+    @Column(length = 1000)
+    private String novedades;
+
+    private Boolean tieneFoto;
 }

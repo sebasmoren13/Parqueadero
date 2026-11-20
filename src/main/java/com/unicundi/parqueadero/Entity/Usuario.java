@@ -6,6 +6,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.time.LocalDateTime;
+
 @Entity
 @Getter @Setter @NoArgsConstructor
 public class Usuario {
@@ -17,7 +19,7 @@ public class Usuario {
     @Column(unique = true, nullable = false)
     private String correo;
 
-    @Column(unique = true, nullable = false)
+    @Column(unique = true)
     private String cedula;
 
     @JsonIgnore
@@ -25,4 +27,11 @@ public class Usuario {
 
     @Enumerated(EnumType.STRING)
     private Rol rol;
+
+    private Boolean visitante;
+
+    @Column(length = 500)
+    private String motivo;
+
+    private LocalDateTime creadoEn;
 }
